@@ -26,5 +26,6 @@ public class ProviderController {
     public ResponseEntity<User> createUser(@RequestBody User user) {
         return ResponseEntity.ok(userRepository.save(user));
     }
+
 }
 

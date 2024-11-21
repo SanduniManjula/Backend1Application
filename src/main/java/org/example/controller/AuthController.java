@@ -4,6 +4,8 @@ import org.example.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -17,7 +19,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password) {
-        if ("testUser".equals(username) && "testPassword".equals(password)) {
+        if ("sanduni".equals(username) && "abc123".equals(password)) {
             return jwtUtil.generateToken(username);
         }
         throw new RuntimeException("Invalid credentials");
